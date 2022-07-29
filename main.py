@@ -1,13 +1,24 @@
 import pyautogui as pg, webbrowser as web, time as tm, emoji
+import pandas as pd
 
-web.open("https://web.whatsapp.com/send?phone=+52 1 228 235 9014&text=holaholaholahola")
-tm.sleep(20)
+data = pd.read_csv("datos.csv")
+data_dict = data.to_dict('list')
+telefonos = data_dict['telefono']
+mensajes = data_dict['mensaje']
+combo = zip(telefonos, mensajes)
+first = True
+
+"""web.open("https://web.whatsapp.com/send?phone="+telefono+"&text="+mensaje)
+tm.sleep(20)"""
+
 """pg.write("Este es un msj automatico")
 pg.press('enter')
 pg.write("Hola")"""
-pg.hotkey('shift', 'enter')
+
+"""pg.hotkey('shift', 'enter')"""
+
 """web.close("https://web.whatsapp.com/send?phone=+52 1 228 235 9014")"""
-pg.write("Test")
+"""pg.write("Test")
 pg.press('enter')
 tm.sleep(30)
 pg.hotkey('ctrl', 'w')
@@ -16,6 +27,25 @@ tm.sleep(20)
 pg.hotkey('shift', 'enter')
 pg.write("Test 🤩🌈COLORS RUN🌈🌕")
 pg.write("🔴🟠🟡🟢🔵🟣🟤")
-pg.write("Te presentamos la CONVOCATORIA oficial de esta divertida y colorida carrera🤩🤗")
-"""emoji.emojize(":zipper-mouth_face:")"""
-pg.press('enter')
+pg.write("Te presentamos la CONVOCATORIA oficial de esta divertida y colorida carrera🤩🤗")"""
+"""emoji.emoj
+ize(":zipper-mouth_face:")"""
+
+"""pg.press('enter')"""
+
+for telefono, mensaje in combo:
+    web.open("https://web.whatsapp.com/send?phone="+telefono+"&text="+mensaje)
+    tm.sleep(20)
+    if first:
+        tm.sleep(7)
+        first = False
+    tm.sleep(7)
+    pg.press('enter')
+    tm.sleep(16)
+    pg.hotkey('ctrl', 'w')
+
+
+    #Copiado de whats app
+    #Copiado de whats app2
+    #Windows
+    #Copiado de escribir
