@@ -1,7 +1,7 @@
 from turtle import width
 import pyautogui as pg, webbrowser as wb, time as tm, pandas as pd, os as os
 
-data = pd.read_csv("resultadosA3.csv")
+data = pd.read_csv("INVITACION-SR.csv")
 data_dict = data.to_dict('list')
 telefonos = data_dict['telefono']
 mensajes = data_dict['mensaje']
